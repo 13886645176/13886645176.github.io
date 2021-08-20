@@ -1,32 +1,16 @@
 <!DOCTYPE html>
-<html ondblclick='toggleFullScreen();'>
-<title>当前时间</title>
-<body>
-<!-- 定义一个id为cg -->
-<span id="cg">2016/12/21 上午12:00:00</span>
-<script>
-/*这个cg就是span的id，初始化Date时间并转化为字符string类型,每1000毫秒，setInterval() 就会调用函数，直到被关闭。*/
-setInterval("cg.innerHTML=new Date().toLocaleString()",1000);
-function toggleFullScreen() {  
-    if (!document.fullscreenElement && // alternative standard method  
-        !document.mozFullScreenElement && !document.webkitFullscreenElement) {// current working methods  
-        if (document.documentElement.requestFullscreen) {  
-            document.documentElement.requestFullscreen();  
-        } else if (document.documentElement.mozRequestFullScreen) {  
-            document.documentElement.mozRequestFullScreen();  
-        } else if (document.documentElement.webkitRequestFullscreen) {  
-            document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);  
-        }  
-    } else {  
-        if (document.cancelFullScreen) {  
-            document.cancelFullScreen();  
-        } else if (document.mozCancelFullScreen) {  
-            document.mozCancelFullScreen();  
-        } else if (document.webkitCancelFullScreen) {  
-            document.webkitCancelFullScreen();  
-        }  
-    }  
-}  
-
-</script>
-</body></html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>文本属性</title>
+        <style type="text/css">
+        p{background-color: #ececec;height: 150px;text-align: center;line-height: 150px;}
+        .one{font-size: 80px;color:#c9394a;font-weight: bold;}
+        .two{font-size:40px;color: gray;text-decoration: underline;letter-spacing: 5px;}
+        .three{font-size: 90px;color: gray;font-style: oblique;}
+        </style>
+    </head>
+    <body>
+        <p><span class="one">生</span>&nbsp;&nbsp;<span class="two">小宝宝</span><span class="three">一定平安！</span></p>
+    </body>
+</html>
